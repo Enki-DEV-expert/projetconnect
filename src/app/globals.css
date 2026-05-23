@@ -1,26 +1,76 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* ── Design tokens (Tailwind v4 @theme) ─────────────────────── */
+@theme {
+  /* Brand colours */
+  --color-ink:      #0A0A0B;
+  --color-night:    #0B1B3A;
+  --color-midnight: #08142E;
+  --color-gold:     #C8A24B;
+  --color-goldsoft: #E8C77A;
+  --color-paper:    #FAFAF7;
+  --color-line:     #E8E5DC;
+
+  /* Font families — CSS vars injected by next/font via layout */
+  --font-display: var(--font-fraunces);
+  --font-sans:    var(--font-inter);
+  --font-modern:  var(--font-space-grotesk);
+  --font-mono:    ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, monospace;
+
+  /* Custom shadows */
+  --shadow-card: 0 30px 60px -25px rgba(8,20,46,.45), 0 12px 24px -16px rgba(0,0,0,.25);
+  --shadow-soft: 0 10px 30px -15px rgba(8,20,46,.25);
+  --shadow-gold: 0 0 0 1px rgba(200,162,75,.4), 0 18px 40px -20px rgba(200,162,75,.45);
+
+  /* Animations */
+  --animate-pop:     pop     350ms cubic-bezier(.2,.9,.2,1.1) both;
+  --animate-fadein:  fadein  450ms ease                       both;
+  --animate-marquee: marquee 30s   linear                     infinite;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+/* ── Keyframes ───────────────────────────────────────────────── */
+@keyframes pop {
+  from { transform: scale(.92); opacity: 0; }
+  to   { transform: scale(1);   opacity: 1; }
+}
+@keyframes fadein {
+  from { transform: translateY(8px); opacity: 0; }
+  to   { transform: translateY(0);   opacity: 1; }
+}
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* ── Custom utilities ────────────────────────────────────────── */
+@utility grain {
+  background-image: radial-gradient(rgba(0,0,0,.04) 1px, transparent 1px);
+  background-size: 3px 3px;
 }
+
+@utility no-tap {
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+}
+
+@utility scroll-area {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(10,10,11,.12) transparent;
+}
+
+/* ── Base ────────────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; }
+
+html { -webkit-font-smoothing: antialiased; }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
 }
+
+/* Fraunces optical sizing */
+.font-display { font-optical-sizing: auto; letter-spacing: -0.01em; }
+
+/* Space Grotesk sell strip */
+.font-modern { letter-spacing: -0.02em; }

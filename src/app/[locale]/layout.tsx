@@ -30,6 +30,11 @@ export const metadata: Metadata = {
   title: "ProjetConnect — Where Talent Meets Capital",
   description:
     "Vous avez une idée, vous trouvez un directeur technique. Vous avez du talent et de l'expérience, vous trouvez un investisseur.",
+  icons: {
+    icon: [{ url: "/icon.svg", type: "image/svg+xml" }],
+    shortcut: "/icon.svg",
+    apple: "/icon.svg",
+  },
   openGraph: {
     title: "ProjetConnect",
     description:

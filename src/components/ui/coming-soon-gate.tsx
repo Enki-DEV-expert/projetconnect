@@ -19,6 +19,7 @@ function ComingSoonModal({ onClose }: { onClose: () => void }) {
 
   return (
     <div
+      data-no-popup
       className="fixed inset-0 z-[200] flex items-center justify-center p-4 animate-fadein"
       role="dialog"
       aria-modal="true"
@@ -115,7 +116,7 @@ export function ComingSoonGate({ children }: { children: React.ReactNode }) {
   }, []);
 
   return (
-    <div onClick={handleClick}>
+    <div onClickCapture={handleClick}>
       {children}
       {open && <ComingSoonModal onClose={() => setOpen(false)} />}
     </div>

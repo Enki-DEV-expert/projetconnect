@@ -3,8 +3,6 @@ import { ImageResponse } from "next/og";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
-const SVG = `<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#C8A24B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 16 L12 5 L19 16"/><circle cx="12" cy="18" r="1.5" fill="#C8A24B" stroke="none"/></svg>`;
-
 export default function Image() {
   return new ImageResponse(
     (
@@ -36,7 +34,7 @@ export default function Image() {
           }}
         />
 
-        {/* Logo + brand name */}
+        {/* Logo mark (drawn with positioned divs — no SVG needed) */}
         <div style={{ display: "flex", alignItems: "center", gap: 14 }}>
           <div
             style={{
@@ -47,14 +45,45 @@ export default function Image() {
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
+              position: "relative",
+              flexShrink: 0,
             }}
           >
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src={`data:image/svg+xml;base64,${btoa(SVG)}`}
-              width={32}
-              height={32}
-              alt=""
+            {/* Left leg of A */}
+            <div
+              style={{
+                position: "absolute",
+                width: 3,
+                height: 22,
+                background: "#C8A24B",
+                borderRadius: 2,
+                transform: "rotate(-28deg) translate(-7px, 1px)",
+                display: "flex",
+              }}
+            />
+            {/* Right leg of A */}
+            <div
+              style={{
+                position: "absolute",
+                width: 3,
+                height: 22,
+                background: "#C8A24B",
+                borderRadius: 2,
+                transform: "rotate(28deg) translate(7px, 1px)",
+                display: "flex",
+              }}
+            />
+            {/* Dot */}
+            <div
+              style={{
+                position: "absolute",
+                width: 5,
+                height: 5,
+                borderRadius: "50%",
+                background: "#C8A24B",
+                top: 37,
+                display: "flex",
+              }}
             />
           </div>
           <span
@@ -116,7 +145,7 @@ export default function Image() {
         </div>
 
         {/* Second sentence */}
-        <div style={{ display: "flex", flexWrap: "wrap", gap: 0 }}>
+        <div style={{ display: "flex", flexWrap: "wrap" }}>
           <span
             style={{
               color: "rgba(250,250,247,0.45)",
@@ -125,7 +154,7 @@ export default function Image() {
               letterSpacing: -0.4,
             }}
           >
-            Vous avez du talent et de l&apos;expérience,&nbsp;
+            {"Vous avez du talent et de l’expérience, "}
           </span>
           <span
             style={{

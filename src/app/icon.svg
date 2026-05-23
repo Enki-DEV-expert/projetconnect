@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" shape-rendering="geometricPrecision">
+  <!-- Dark rounded background -->
+  <rect width="32" height="32" rx="7" fill="#0A0A0B"/>
+  <!-- Gold A-mark: two legs meeting at apex -->
+  <path
+    d="M7.5 22 L16 8 L24.5 22"
+    stroke="#C8A24B"
+    stroke-width="2.6"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    fill="none"
+  />
+  <!-- Gold dot below apex -->
+  <circle cx="16" cy="25.5" r="1.8" fill="#C8A24B"/>
+</svg>

@@ -40,6 +40,7 @@ export function LangPicker({
 
   return (
     <div
+      data-no-popup
       className={cn(
         "inline-flex items-center gap-1 p-1 rounded-full border no-tap",
         wrapper

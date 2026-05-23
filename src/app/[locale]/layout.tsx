@@ -4,6 +4,7 @@ import { NextIntlClientProvider } from "next-intl";
 import { getMessages, setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
+import { ComingSoonGate } from "@/components/ui/coming-soon-gate";
 
 const fraunces = Fraunces({
   subsets: ["latin"],
@@ -74,7 +75,9 @@ export default async function LocaleLayout({ children, params }: Props) {
     >
       <body className="min-h-screen bg-paper text-ink antialiased">
         <NextIntlClientProvider messages={messages}>
-          {children}
+          <ComingSoonGate>
+            {children}
+          </ComingSoonGate>
         </NextIntlClientProvider>
       </body>
     </html>

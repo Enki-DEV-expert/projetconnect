@@ -215,5 +215,8 @@
   "categories": {
     "tech": "Technologie", "health": "Santé", "energy": "Énergie", "ai": "IA",
     "construction": "Construction", "finance": "Finance", "education": "Éducation"
-  }
+  },
+  "cs_title": "Merci de visiter notre page",
+  "cs_sub": "Bientôt disponible",
+  "cs_close": "Fermer"
 }

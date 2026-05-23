@@ -29,7 +29,22 @@ const spaceGrotesk = Space_Grotesk({
 export const metadata: Metadata = {
   title: "ProjetConnect — Where Talent Meets Capital",
   description:
-    "La plateforme de matching entre porteurs de talent et porteurs de capital. Swipez, matchez, construisez.",
+    "Vous avez une idée, vous trouvez un directeur technique. Vous avez du talent et de l'expérience, vous trouvez un investisseur.",
+  openGraph: {
+    title: "ProjetConnect",
+    description:
+      "Vous avez une idée, vous trouvez un directeur technique. Vous avez du talent et de l'expérience, vous trouvez un investisseur.",
+    url: "https://projetconnect.com",
+    siteName: "ProjetConnect",
+    type: "website",
+    locale: "fr_FR",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "ProjetConnect",
+    description:
+      "Vous avez une idée, vous trouvez un directeur technique. Vous avez du talent et de l'expérience, vous trouvez un investisseur.",
+  },
 };
 
 type Props = {
